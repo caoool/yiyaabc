@@ -1,0 +1,6 @@
+template(name='login')
+	h1 Login
+	input#username(type='text', placeholder='Username or Email')
+	input#password(type='password', placeholder='Password')
+	button#login Login
+	a(href="{{pathFor route='register'}}") Register

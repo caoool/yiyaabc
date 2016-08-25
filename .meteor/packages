@@ -24,7 +24,13 @@ coffeescript
 mquandalle:jade
 mquandalle:stylus
 
-iron:router
+aldeed:simple-schema
+aldeed:collection2
+
 accounts-base
 accounts-ui
 accounts-password
+alanning:roles
+
+iron:router
+http
