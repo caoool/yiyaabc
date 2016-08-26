@@ -1,9 +1,9 @@
 Users = {}
 
 Users.profileSchema = new SimpleSchema
-  organizationId:
-    type: String
-    max: 50
+  # organizationId:
+  #   type: String
+  #   max: 50
 
 Users.Schema = new SimpleSchema
   profile:
