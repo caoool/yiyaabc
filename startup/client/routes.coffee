@@ -7,7 +7,7 @@ Router.onBeforeAction ->
   @subscribe('currentUser').wait()
   if @ready()
     if !Meteor.userId()
-      @render 'login'
+      Router.go '/login'
       return
     else
       @next()

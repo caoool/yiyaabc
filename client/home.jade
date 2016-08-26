@@ -1,3 +1,7 @@
 template(name='home')
 	h1 {{currentUser.username}}
+	if isInRole 'student'
+		h2 Student
+	if isInRole 'teacher'
+		h2 Teacher
 	button#logout Logout

@@ -1,0 +1,7 @@
+template(name='register_teacher')
+	.register_teacher
+		h1 Register Teacher
+		input#email(type='email', placeholder='Email')
+		input#password(type='password', placeholder='password')
+		button#register Register
+		a(href="{{pathFor route='login'}}") Login
