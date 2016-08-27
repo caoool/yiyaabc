@@ -1,4 +1,11 @@
 template(name='teacher')
-	h1 {{currentUser.username}}
-	h2 Teacher
-	button#logout Logout
+	.teacher
+		h1 Teacher's Page
+		h1 {{currentUser.username}}
+		h2 Teacher
+		button#teacher_logout Logout
+		button#teacher_availability_insert Insert
+		each availabilities
+			p From {{start}}
+			p end {{end}}
+			p {{status}}
