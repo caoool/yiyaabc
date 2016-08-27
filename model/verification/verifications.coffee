@@ -1,14 +1,21 @@
 class VerificationsCollection extends Mongo.Collection
 	
 	insert: (verification, callback) ->
+
+		Meteor.setTimeout ->
+			Verifications.remove verification._id
+		, 300000
+
 		super verification, callback
 
 
 	update: (selector, modifier, callback) ->
+
 		super selector, modifier, callback
 
 
 	remove: (selector, callback) ->
+
 		super selector, callback
 
 

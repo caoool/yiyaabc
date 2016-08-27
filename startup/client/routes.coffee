@@ -5,13 +5,10 @@
 Router.onBeforeAction ->
 
   @subscribe('currentUser').wait()
-  if @ready()
-    if !Meteor.userId()
-      Router.go '/login'
-      return
-    else
-      @next()
-      return
+
+  if @ready() and !Meteor.userId()
+    Router.go '/login'
+    return
   @next()
   return
 
@@ -23,7 +20,15 @@ Router.onBeforeAction ->
 
 Router.route '/', ->
 
-	@render 'home'
+  if Roles.userIsInRole Meteor.user(), ['student']
+    @render 'student'
+    return
+
+  if Roles.userIsInRole Meteor.user(), ['teacher']
+    @render 'teacher'
+    return
+
+  @render 'home'
 	return
 
 
