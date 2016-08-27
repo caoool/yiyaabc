@@ -21,10 +21,18 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 npm-bcrypt
 
 coffeescript
+jss:coffeescript-property
 mquandalle:jade
 mquandalle:stylus
 
-iron:router
+aldeed:simple-schema
+aldeed:collection2
+
 accounts-base
 accounts-ui
 accounts-password
+alanning:roles
+
+iron:router
+http
+
