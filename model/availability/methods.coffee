@@ -1,18 +1,25 @@
-# require './availability.coffee'
+require './availability.coffee'
 
 
-# Meteor.methods
+Meteor.methods
 
 
-# 	'avaiability.setBusy': (uid) ->
+	'availability.setBusy': (uid) ->
 
-# 		availability = new Availability uid
+		availability = new Availability uid
 
-# 		availability.setBusy()
+		availability.setBusy()
 
 
-# 	'avaiability.setFree': (uid) ->
+	'availability.setFree': (uid) ->
 
-# 		availability = new Availability uid
+		availability = new Availability uid
 
-# 		availability.setFree()
+		availability.setFree()
+
+
+	'availability.remove': (uid) ->
+
+		availability = new Availability uid
+
+		availability.remove()

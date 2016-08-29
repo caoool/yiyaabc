@@ -1,19 +1,22 @@
 class @Availability
 
-	constructor: (uid) ->
-
-		@uid = uid
+	constructor: (@uid) ->
 
 
 	setFree: ->
 
-		Availabilities.update uid,
+		Availabilities.update @uid,
 			$set:
 				status: 'free'
 
 
 	setBusy: ->
 
-		Availabilities.update uid,
+		Availabilities.update @uid,
 			$set:
 				status: 'busy'
+
+
+	remove: ->
+
+		Availabilities.remove @uid

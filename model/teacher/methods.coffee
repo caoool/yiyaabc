@@ -1,7 +1,7 @@
 Meteor.methods
 
 
-	'teacher.availability.insert': (start) ->
+	'teacher.availabilities.insert': (start) ->
 
 		new SimpleSchema
 			start: type: Date
@@ -10,4 +10,4 @@ Meteor.methods
 
 		teacher = new Teacher Meteor.userId()
 
-		teacher.availability_insert start
+		teacher.insertAvailability start

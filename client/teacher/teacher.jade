@@ -4,8 +4,14 @@ template(name='teacher')
 		h1 {{currentUser.username}}
 		h2 Teacher
 		button#teacher_logout Logout
-		button#teacher_availability_insert Insert
+		input#teacher_available_datetime(type='datetime-local', placeholder='Date & Time')
+		button#teacher_availabilities_insert Insert
 		each availabilities
+			h3 Availability
+			p UID {{_id}}
+			button#teacher_availability_set_busy Set Busy
+			button#teacher_availability_set_free Set Free
+			button#teacher_availability_remove Remove
 			p From {{start}}
 			p end {{end}}
 			p {{status}}

@@ -2,7 +2,7 @@ require '../user/user.coffee'
 
 class @Teacher extends User
 
-	'availability_insert': (start) ->
+	'insertAvailability': (start) ->
 
 		teacherId = @uid
 

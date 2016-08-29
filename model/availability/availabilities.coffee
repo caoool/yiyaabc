@@ -11,7 +11,7 @@ class AvailabilitiesCollection extends Mongo.Collection
 
 		# console.log count
 
-		return if count != 0
+		# return if count != 0
 
 		super availability, callback
 
@@ -45,14 +45,20 @@ Availabilities.schema = new SimpleSchema
 	start:
 		type: Date
 		autoValue: ->
-			Helpers.sharpTime @value
+			if @isInsert
+				Helpers.sharpTime @value
+			else
+				@insert
 
 
 	end:
 		type: Date
 		autoValue: ->
-			start = @field 'start'
-			Helpers.addHh new Date start.value
+			if @isInsert
+				start = @field 'start'
+				Helpers.addHh new Date start.value
+			else
+				@insert
 
 
 	status:

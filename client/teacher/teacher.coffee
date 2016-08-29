@@ -10,11 +10,30 @@ Template.teacher.events
 		Meteor.logout()
 
 
-	'click #teacher_availability_insert': () ->
+	'click #teacher_availabilities_insert': (event) ->
 
-		now = new Date()
-		Meteor.call 'teacher.availability.insert',
-			now
+		datetime = $('#teacher_available_datetime').val()
+		start = new Date datetime
+		Meteor.call 'teacher.availabilities.insert',
+			start
+
+
+	'click #teacher_availability_set_busy': (event) ->
+
+		Meteor.call 'availability.setBusy',
+			@_id
+
+
+	'click #teacher_availability_set_free': (event) ->
+
+		Meteor.call 'availability.setFree',
+			@_id
+
+
+	'click #teacher_availability_remove': (event) ->
+
+		Meteor.call 'availability.remove',
+			@_id
 
 
 Template.teacher.helpers
