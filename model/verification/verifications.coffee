@@ -32,6 +32,7 @@ Verifications.deny
 Verifications.schema = new SimpleSchema
 
 	code:
+		
 		type: String
 		autoValue: ->
 			if @isInsert

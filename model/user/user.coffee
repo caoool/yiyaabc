@@ -1,10 +1,10 @@
 class @User
 
-	constructor: (userId) ->
+	constructor: (uid) ->
 
-		@userId = userId
+		@uid = uid
 
 
-	@getter 'user', () ->
+	@getter 'user', ->
 
-		Meteor.users.findOne _id: @userId
+		Meteor.users.findOne _id: @uid
