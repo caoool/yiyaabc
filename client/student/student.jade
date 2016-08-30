@@ -17,4 +17,11 @@ template(name='student')
 			p Start: {{start}}
 			p End: {{end}}
 			p Status: {{status}}
-			button#student_teacher_reserve Reserve 
+			button#student_teacher_reserve(relationId="{{../_id}}") Reserve 
+	h1 My Lessons
+	each lessons
+		h2 Lesson
+		p Start: {{start}}
+		p End: {{end}}
+		p Teacher: {{teacherId}}
+		button#student_lesson_cancel Cancel

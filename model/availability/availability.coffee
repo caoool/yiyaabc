@@ -3,6 +3,11 @@ class @Availability
 	constructor: (@uid=null) ->
 
 
+	remove: (uid=null) ->
+
+		Availabilities.remove uid or @uid
+
+
 	setFree: ->
 
 		Availabilities.update @uid,
@@ -15,8 +20,3 @@ class @Availability
 		Availabilities.update @uid,
 			$set:
 				status: 'busy'
-
-
-	remove: ->
-
-		Availabilities.remove @uid

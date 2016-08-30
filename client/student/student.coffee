@@ -2,6 +2,7 @@ Template.student.onCreated ->
 
 	@subscribe 'teachers.all'
 	@subscribe 'relations.student'
+	@subscribe 'lessons.student'
 
 	Tracker.autorun ->
 		relation = Relations.findOne()
@@ -33,6 +34,25 @@ Template.student.events
 		Meteor.call 'relation.remove', @_id
 
 
+	'click #student_teacher_reserve': (event) ->
+
+		event.preventDefault()
+
+		availabilityId = @_id
+		relationId = $(event.target).attr 'relationId'
+
+		Meteor.call 'lessons.insert',
+			availabilityId: availabilityId
+			relationId: relationId
+
+
+	'click #student_lesson_cancel': (event) ->
+
+		event.preventDefault()
+
+		Meteor.call 'lessons.remove', @_id
+
+
 Template.student.helpers
 
 	teachers: ->
@@ -53,3 +73,8 @@ Template.student.helpers
 	availabilities: (teacherId) ->
 
 		Availabilities.find teacherId: teacherId
+
+
+	lessons: ->
+
+		Lessons.find()

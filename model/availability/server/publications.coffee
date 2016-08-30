@@ -1,9 +1,9 @@
 Meteor.publish 'availabilities.teacher', (teacherId=null) ->
 	
-  return @ready() if !@userId?
+	return @ready() if !@userId?
   
-  Availabilities.find
-  	teacherId: teacherId or @userId
+	Availabilities.find
+		teacherId: teacherId or @userId
 
 
 Meteor.publish 'availabilities.teachers', (teacherIds) ->

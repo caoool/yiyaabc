@@ -27,6 +27,7 @@ mquandalle:stylus
 
 aldeed:simple-schema
 aldeed:collection2
+matb33:collection-hooks
 
 accounts-base
 accounts-ui
@@ -35,4 +36,3 @@ alanning:roles
 
 iron:router
 http
-
