@@ -1,4 +1,20 @@
 template(name='student')
 	h1 {{currentUser.username}}
 	h2 Student
-	button#logout Logout
+	button#student_logout Logout
+	h1 Teachers
+	each teachers
+		p id {{_id}}
+		button#student_teacher_assign Assign
+	h1 My Teachers
+	each relations
+		h2 Teacher
+		with myTeacher teacherId
+			p {{_id}}
+		button#student_teacher_unassign Unassign
+		h3 Available at
+		each availabilities teacherId
+			p Start: {{start}}
+			p End: {{end}}
+			p Status: {{status}}
+			button#student_teacher_reserve Reserve 

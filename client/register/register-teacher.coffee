@@ -5,7 +5,7 @@ Template.register_teacher.events
 		event.preventDefault()
 
 		Accounts.createUser
-			username: $('.register_teacher #email').val()
+			email: $('.register_teacher #email').val()
 			password: $('.register_teacher #password').val()
 			, (error, result) ->
 				if error
