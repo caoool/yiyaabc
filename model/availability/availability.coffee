@@ -1,6 +1,6 @@
 class @Availability
 
-	constructor: (@uid) ->
+	constructor: (@uid=null) ->
 
 
 	setFree: ->
